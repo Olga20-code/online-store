@@ -20,15 +20,24 @@
 		background-size: cover;
 		background-position: center;
 		display: grid;
-		grid-template-rows: repeat(2, 1fr);
+		grid-template-rows: repeat(2, auto);
+				place-content: center;
 
 		& .about_title {
 			color: color(white, light);
 			@include heading-sm();
 			word-wrap: break-word;
-			margin-top: 32px;
+			margin: 32px 0 8px;
 			line-height: 1.5;
 			text-align: center;
+		}
+		& .about_title-span {
+			display: none;
+			color: color(white, light);
+			margin-bottom: 32px;
+			text-align: center;
+			word-wrap: break-word;
+			line-height: 1.5;
 		}
 
 		& .to_catalog-button {
@@ -41,6 +50,7 @@
 			border-radius: 15px;
 			border: none;
 			outline: none;
+			
 		}
 	}
 
@@ -116,6 +126,12 @@
 
 @media screen and (min-width: 576px) and (max-width: 767.999px) {
 	.about_container {
+
+		& .to_catalog {
+			min-height: 360px;
+
+			
+		}
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
@@ -130,6 +146,14 @@
 
 @media screen and (min-width: 768px) and (max-width: 991.999px) {
 	.about_container {
+
+		& .to_catalog {
+			min-height: 520px;
+
+			& .about_title-span {
+			display: block;
+		}
+		}
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
@@ -185,6 +209,14 @@
 
 @media screen and (min-width: 992px) and (max-width: 1200.999px) {
 	.about_container {
+		
+& .to_catalog {
+		min-height: 520px;
+		& .about_title-span {
+			display: block;
+		}
+	}
+
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
@@ -236,6 +268,17 @@
 
 @media screen and (min-width: 1201px) and (max-width: 1440.999px) {
 	.about_container {
+
+		& .to_catalog {
+			min-height: 700px;
+			& .to_catalog-button {
+	
+			}
+			& .about_title-span {
+			display: block;
+		}
+		}
+		
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
@@ -308,6 +351,18 @@
 
 @media screen and (min-width: 1441px) {
 	.about_container {
+
+		& .to_catalog {
+			min-height: 700px;
+
+			& .to_catalog-button {
+		
+			}
+			& .about_title-span {
+			display: block;
+		}
+		}
+
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {

@@ -145,9 +145,7 @@
 							color: color(green, dark-active);
 						}
 
-						& .catalog_offers-card-link {
-							color: color(green, dark-active);
-							@include body-lg();
+						& .catalog_offers-link-text {
 							text-decoration: none;
 						}
 					}
@@ -314,7 +312,7 @@
 			}
 		}
 	}
-}
+} //done
 
 @media screen and (min-width: 576px) and (max-width: 767.999px) {
 	.main_page {
@@ -441,7 +439,7 @@
 			}
 		}
 	}
-}
+} // done
 
 @media screen and (min-width: 768px) and (max-width: 991.999px) {
 	.main_page {
@@ -578,7 +576,7 @@
 			}
 		}
 	}
-}
+} //done
 
 @media screen and (min-width: 992px) and (max-width: 1200.999px) {
 	.main_page {
@@ -594,7 +592,6 @@
 			& .to_catalog {
 				& .to_catalog-button {
 					@include body-lg();
-
 					min-width: 450px;
 				}
 			}
@@ -717,7 +714,7 @@
 			}
 		}
 	}
-}
+} //done
 
 @media screen and (min-width: 1201px) and (max-width: 1440.999px) {
 	.main_page {
@@ -1004,4 +1001,4 @@
 			}
 		}
 	}
-}
+} //done

@@ -50,6 +50,7 @@ input:-webkit-autofill:active {
 .login_icon {
 
 
+
     // Заголовок
     .wrapper_login_title {
       display: flex;
@@ -71,11 +72,32 @@ input:-webkit-autofill:active {
       }
 
       .login_icon {
+   width: 100%;
+    margin: 48px 0 0 0;
+}
+.login_title {
+    height: 49px;
+    width: 376px;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 36px;
+    text-align: center;
+    vertical-align: middle;
+    color: #0A2308;
+    margin: 18px 0;
+   
+        
+}
+.login_icon {
+
         width: 44px;
         height: 44px;
       }
     }
   }
+
+
+
     // Форма логіна
     .login_form {
       width: 376px;
@@ -204,4 +226,4 @@ input:-webkit-autofill:active {
       }
     }
   }
-}
+

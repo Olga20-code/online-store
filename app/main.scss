@@ -54,7 +54,7 @@
 		}
 	}
 
-	& .catalog_offers_section {
+	& .catalog_offers-section {
 		margin: 56px 16px;
 		& .catalog_offers-container {
 			& .slick-slider {
@@ -145,9 +145,7 @@
 							color: color(green, dark-active);
 						}
 
-						& .catalog_offers-card-link {
-							color: color(green, dark-active);
-							@include body-lg();
+						& .catalog_offers-link-text {
 							text-decoration: none;
 						}
 					}
@@ -314,7 +312,7 @@
 			}
 		}
 	}
-}
+} 
 
 @media screen and (min-width: 576px) and (max-width: 767.999px) {
 	.main_page {
@@ -337,7 +335,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include body-lg();
@@ -441,7 +439,7 @@
 			}
 		}
 	}
-}
+} // done
 
 @media screen and (min-width: 768px) and (max-width: 991.999px) {
 	.main_page {
@@ -463,7 +461,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include body-lg();
@@ -578,7 +576,7 @@
 			}
 		}
 	}
-}
+} //done
 
 @media screen and (min-width: 992px) and (max-width: 1200.999px) {
 	.main_page {
@@ -594,12 +592,11 @@
 			& .to_catalog {
 				& .to_catalog-button {
 					@include body-lg();
-
 					min-width: 450px;
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-sm();
@@ -717,7 +714,7 @@
 			}
 		}
 	}
-}
+} //done
 
 @media screen and (min-width: 1201px) and (max-width: 1440.999px) {
 	.main_page {
@@ -738,7 +735,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-md();
@@ -879,7 +876,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-md();
@@ -1004,4 +1001,4 @@
 			}
 		}
 	}
-}
+} 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import './ContactForm.scss';
-import LogoForm from 'vet/contact/LogoForm';
+import LogoForm from './LogoForm';
 
 export default function ContactForm() {
   return (

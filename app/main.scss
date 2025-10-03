@@ -54,7 +54,7 @@
 		}
 	}
 
-	& .catalog_offers_section {
+	& .catalog_offers-section {
 		margin: 56px 16px;
 		& .catalog_offers-container {
 			& .slick-slider {
@@ -312,7 +312,7 @@
 			}
 		}
 	}
-} //done
+} 
 
 @media screen and (min-width: 576px) and (max-width: 767.999px) {
 	.main_page {
@@ -335,7 +335,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include body-lg();
@@ -461,7 +461,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include body-lg();
@@ -596,7 +596,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-sm();
@@ -735,7 +735,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-md();
@@ -876,7 +876,7 @@
 				}
 			}
 		}
-		& .catalog_offers_section {
+		& .catalog_offers-section {
 			& .catalog_offers-container {
 				& .catalog_offers-title {
 					@include heading-md();
@@ -1001,4 +1001,4 @@
 			}
 		}
 	}
-} //done
+} 

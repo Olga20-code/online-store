@@ -10,7 +10,7 @@ export default function CatalogSection() {
 	const { settings, isMobile } = useSettings();
 
 	return (
-		<section className="catalog_offers_section">
+		<section className="catalog_offers-section">
 			<div className="catalog_offers-container">
 				<h3 className="catalog_offers-title">
 					Ознайомтеся з нашими пропозиціями

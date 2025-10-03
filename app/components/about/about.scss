@@ -1,6 +1,6 @@
 @import '../../styles/colors.scss';
 @import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import '../../styles//mixins.scss';
 @import '../../styles/function.scss';
 
 .about_container {
@@ -20,8 +20,8 @@
 		background-size: cover;
 		background-position: center;
 		display: grid;
-		grid-template-rows: repeat(2, auto);
-				place-content: center;
+		grid-template-rows: repeat(2, 1fr);
+		place-content: center;
 
 		& .about_title {
 			color: color(white, light);
@@ -38,37 +38,37 @@
 			text-align: center;
 			word-wrap: break-word;
 			line-height: 1.5;
+			@include body-sm();
 		}
 
 		& .to_catalog-button {
 			color: color(green, darker);
-			@include body-sm();
+			@include body-lg();
 			min-width: 290px;
+			max-width: 490px;
+			width: 100%;
 			height: 52px;
+			justify-self: center;
 			align-self: end;
 			margin: 0 15px 15px;
 			border-radius: 15px;
 			border: none;
 			outline: none;
-			
 		}
 	}
 
 	& .about_us {
 		margin: 56px 16px 0;
 		& .about_description {
-			& .about_description-title,
+			& .about_description-title {
+				@include body-lg();
+				text-align: center;
+				color: color(green, darker);
+			}
 			& .about_description-text {
 				text-align: center;
-			}
-			& .about_description-title {
-				margin-bottom: 12px;
-				color: color(green, darker);
-				@include body-lg();
-			}
-			& .about_description-text {
-				color: color(green, darker);
 				@include body-sm();
+				color: color(green, darker);
 			}
 		}
 
@@ -87,7 +87,7 @@
 					& .our_advantages-item-number {
 						@include heading-lg();
 						color: color(green, darker);
-						font-weight: 200;
+						font-weight: 400;
 						grid-column: 1/2;
 						grid-row: 1/2;
 					}
@@ -99,6 +99,7 @@
 						word-wrap: break-word;
 						grid-column: 2/3;
 						grid-row: 1/2;
+						align-self: center;
 					}
 
 					& .more_info-box {
@@ -113,6 +114,8 @@
 						list-style: disc;
 						margin-top: 8px;
 						transition: all 0.8s ease-in-out;
+						@include body-sm();
+						margin-bottom: 10px;
 
 						& .list-item {
 							margin-left: 16px;
@@ -126,19 +129,53 @@
 
 @media screen and (min-width: 576px) and (max-width: 767.999px) {
 	.about_container {
-
 		& .to_catalog {
 			min-height: 360px;
-
-			
+			& .about_title {
+				@include body-lg();
+			}
 		}
 		& .catalog {
 			display: grid;
-			& .catalog_offers-cards {
-				display: grid;
-				grid-template-columns: 1fr auto;
-				grid-template-rows: 1fr auto;
-				gap: 10px;
+
+			& .catalog_offers-section {
+				& .catalog_offers-container {
+					& .catalog_offers-title {
+						@include body-lg();
+					}
+				}
+			}
+		}
+		& .about_us {
+			& .about_description {
+				& .about_description-title {
+					@include body-lg();
+				}
+				& .about_description-text {
+					@include body-md();
+				}
+			}
+
+			& .our_advantages {
+				& .our_advantages-list {
+					& .our_advantages-list-item {
+						& .our_advantages-item-number {
+							@include heading-lg();
+							font-weight: 400;
+						}
+						& .our_advantages-item-title {
+							@include body-md();
+							font-weight: 600;
+						}
+
+						& .additional_information {
+							@include body-md();
+							& .list-item {
+								margin-left: 16px;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -146,59 +183,65 @@
 
 @media screen and (min-width: 768px) and (max-width: 991.999px) {
 	.about_container {
-
 		& .to_catalog {
 			min-height: 520px;
+			grid-template-rows: repeat(3, auto);
+
+			& .about_title {
+				@include heading-md();
+			}
 
 			& .about_title-span {
-			display: block;
-		}
+				display: block;
+				@include heading-sm();
+			}
+
+			& .to_catalog-button {
+				@include body-lg();
+			}
 		}
 		& .catalog {
 			display: grid;
-			& .catalog_offers-cards {
-				display: grid;
-				grid-template-columns: 1fr auto;
-				grid-template-rows: 1fr auto;
-				gap: 10px;
-			}
 		}
-		& .our_advantages {
-			& .our_advantages-list {
-				& .our_advantages-list-item {
-					display: grid;
-					grid-template-columns: auto auto;
-					grid-template-rows: 1fr 1fr;
-					margin-bottom: 24px;
 
-					& .our_advantages-item-number {
-						@include heading-lg();
-						grid-column: 1/2;
-						grid-row: 1/2;
-					}
-					& .our_advantages-item-title {
-						color: color(green, darker);
-						@include body-md();
-						align-self: end;
-						margin-left: 8px;
-						word-wrap: break-word;
-						grid-column: 2/3;
-						grid-row: 1/2;
-					}
+		& .about_us {
+			& .about_description {
+				& .about_description-title {
+					@include heading-sm();
+				}
+				& .about_description-text {
+					@include body-lg();
+				}
+			}
+			& .our_advantages {
+				& .our_advantages-list {
+					& .our_advantages-list-item {
+						margin-bottom: 24px;
 
-					& .more_info-box {
-						display: none;
-					}
+						& .our_advantages-item-number {
+							@include heading-lg();
+							font-weight: 400;
+						}
+						& .our_advantages-item-title {
+							color: color(green, darker);
+							@include body-lg();
+							align-self: end;
+							word-wrap: break-word;
+						}
 
-					& .additional_information {
-						grid-column: 1/3;
-						grid-row: 2/3;
-						list-style: disc;
-						margin-top: 8px;
-						border-top: 1px solid #0a2308;
-						padding-top: 10px;
-						& .list-item {
-							margin-left: 16px;
+						& .more_info-box {
+							display: none;
+						}
+
+						& .additional_information {
+							@include body-md();
+							list-style: disc;
+							margin-top: 8px;
+							border-top: 1px solid #0a2308;
+							padding-top: 10px;
+							& .list-item {
+								margin-left: 16px;
+							}
 						}
 					}
 				}
@@ -209,55 +252,64 @@
 
 @media screen and (min-width: 992px) and (max-width: 1200.999px) {
 	.about_container {
-		
-& .to_catalog {
-		min-height: 520px;
-		& .about_title-span {
-			display: block;
+		& .to_catalog {
+			min-height: 520px;
+			grid-template-rows: repeat(3, auto);
+
+			& .about_title {
+				@include heading-md();
+			}
+			& .about_title-span {
+				@include heading-sm();
+				display: block;
+			}
+			& .to_catalog-button {
+				@include body-lg();
+			}
 		}
-	}
 
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
 				display: grid;
-				grid-template-columns: 1fr auto;
-				grid-template-rows: 1fr auto;
+				grid-template-columns: repeat(4, 1fr);
 				gap: 10px;
 			}
 		}
-		& .our_advantages {
-			& .our_advantages-list {
-				& .our_advantages-list-item {
-					display: grid;
-					grid-template-columns: auto auto;
-					grid-template-rows: 1fr 1fr;
-					margin-bottom: 24px;
+		& .about_us {
+			& .about_description {
+				& .about_description-title {
+					@include heading-md();
+					font-weight: 400;
+				}
+				& .about_description-text {
+					@include body-lg();
+				}
+			}
+			& .our_advantages {
+				& .our_advantages-list {
+					& .our_advantages-list-item {
+						margin-bottom: 24px;
 
-					& .our_advantages-item-number {
-						@include heading-lg();
-						grid-column: 1/2;
-						grid-row: 1/2;
-					}
-					& .our_advantages-item-title {
-						color: color(green, darker);
-						@include body-md();
-						align-self: end;
-						margin-left: 8px;
-						word-wrap: break-word;
-						grid-column: 2/3;
-						grid-row: 1/2;
-					}
+						& .our_advantages-item-number {
+							@include heading-lg();
+							font-weight: 400;
+						}
+						& .our_advantages-item-title {
+							@include body-lg();
+							word-wrap: break-word;
+							align-self: end;
+						}
 
-					& .additional_information {
-						grid-column: 1/3;
-						grid-row: 2/3;
-						list-style: disc;
-						margin-top: 8px;
-						border-top: 1px solid #0a2308;
-						padding-top: 10px;
-						& .list-item {
-							margin-left: 16px;
+						& .additional_information {
+							@include body-md();
+							list-style: disc;
+							margin-top: 8px;
+							border-top: 1px solid #0a2308;
+							padding-top: 10px;
+							& .list-item {
+								margin-left: 16px;
+							}
 						}
 					}
 				}
@@ -268,17 +320,21 @@
 
 @media screen and (min-width: 1201px) and (max-width: 1440.999px) {
 	.about_container {
-
 		& .to_catalog {
 			min-height: 700px;
+			grid-template-rows: repeat(3, auto);
+			& .about_title {
+				@include heading-lg();
+			}
 			& .to_catalog-button {
-	
+				@include heading-sm();
 			}
 			& .about_title-span {
-			display: block;
+				@include heading-sm();
+				display: block;
+			}
 		}
-		}
-		
+
 		& .catalog {
 			display: grid;
 			& .catalog_offers-cards {
@@ -287,60 +343,65 @@
 				gap: 10px;
 			}
 		}
-		& .our_advantages {
-			& .our_advantages-list {
-				grid-template-columns: 1fr 1fr;
-				grid-template-rows: repeat(5, 1fr);
-				& .our_advantages-list-item {
-					display: grid;
-					grid-template-columns: auto auto;
-					grid-template-rows: 1fr 1fr;
-					margin-bottom: 24px;
-					&:nth-child(even) {
-						grid-column: 2/3;
-					}
-					&:nth-child(odd) {
-						grid-column: 1/2;
-					}
-					&:nth-child(1) {
-						grid-row: 1/2;
-					}
-					&:nth-child(2) {
-						grid-row: 2/3;
-					}
-					&:nth-child(3) {
-						grid-row: 3/4;
-					}
-					&:nth-child(4) {
-						grid-row: 4/5;
-					}
-					&:nth-child(5) {
-						grid-row: 5/6;
-					}
-					& .our_advantages-item-number {
-						@include heading-lg();
-						grid-column: 1/2;
-						grid-row: 1/2;
-					}
-					& .our_advantages-item-title {
-						color: color(green, darker);
-						@include body-md();
-						align-self: end;
-						margin-left: 8px;
-						word-wrap: break-word;
-						grid-column: 2/3;
-						grid-row: 1/2;
-					}
+		& .about_us {
+			& .about_description {
+				& .about_description-title {
+					@include heading-lg();
+					font-weight:400;
+				}
+				& .about_description-text {
+					@include heading-sm();
+				}
+			}
+			& .our_advantages {
+				& .our_advantages-list {
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: repeat(5, 1fr);
+					& .our_advantages-list-item {
+						margin-bottom: 24px;
+						&:nth-child(even) {
+							grid-column: 2/3;
+						}
+						&:nth-child(odd) {
+							grid-column: 1/2;
+						}
+						&:nth-child(1) {
+							grid-row: 1/2;
+						}
+						&:nth-child(2) {
+							grid-row: 2/3;
+						}
+						&:nth-child(3) {
+							grid-row: 3/4;
+						}
+						&:nth-child(4) {
+							grid-row: 4/5;
+						}
+						&:nth-child(5) {
+							grid-row: 5/6;
+						}
+						& .our_advantages-item-number {
+							@include heading-lg();
+							font-weight: 400;
+						}
+						& .our_advantages-item-title {
+							@include body-lg();
+							align-self: center;
+							margin-left: 8px;
+							word-wrap: break-word;
+						}
 
-					& .additional_information {
-						grid-column: 1/3;
-						grid-row: 2/3;
-						list-style: disc;
-						margin-top: 8px;
-						border-top: 1px solid #0a2308;
-						padding-top: 10px;
-						& .list-item {
-							margin-left: 16px;
+						& .additional_information {
+							@include body-md();
+							grid-column: 1/3;
+							grid-row: 2/3;
+							list-style: disc;
+							margin-top: 8px;
+							border-top: 1px solid #0a2308;
+							padding-top: 10px;
+							& .list-item {
+								margin-left: 16px;
+							}
 						}
 					}
 				}
@@ -351,16 +412,19 @@
 
 @media screen and (min-width: 1441px) {
 	.about_container {
-
 		& .to_catalog {
 			min-height: 700px;
-
+			grid-template-rows: repeat(3, auto);
+			& .about_title {
+				@include heading-lg();
+			}
 			& .to_catalog-button {
-		
+				@include heading-sm();
 			}
 			& .about_title-span {
-			display: block;
-		}
+				@include heading-sm();
+				display: block;
+			}
 		}
 
 		& .catalog {
@@ -371,14 +435,23 @@
 				gap: 10px;
 			}
 		}
-		& .our_advantages {
+
+		& .about_us {
+			& .about_description {
+				& .about_description-title {
+					@include heading-lg();
+					font-weight: 400;
+				}
+				& .about_description-text {
+					@include heading-md();
+					font-weight: 400;
+				}
+			}
+			& .our_advantages {
 			& .our_advantages-list {
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: repeat(5, 1fr);
 				& .our_advantages-list-item {
-					display: grid;
-					grid-template-columns: auto auto;
-					grid-template-rows: 1fr 1fr;
 					margin-bottom: 24px;
 					&:nth-child(even) {
 						grid-column: 2/3;
@@ -403,24 +476,20 @@
 					}
 					& .our_advantages-item-number {
 						@include heading-lg();
-						grid-column: 1/2;
-						grid-row: 1/2;
+						font-weight: 400;
+
 					}
 					& .our_advantages-item-title {
 						color: color(green, darker);
-						@include body-md();
-						align-self: end;
+						@include heading-sm();
 						margin-left: 8px;
 						word-wrap: break-word;
-						grid-column: 2/3;
-						grid-row: 1/2;
+
 					}
 
 					& .additional_information {
-						grid-column: 1/3;
-						grid-row: 2/3;
+						@include body-lg();
 						list-style: disc;
-						margin-top: 8px;
 						border-top: 1px solid #0a2308;
 						padding-top: 10px;
 						& .list-item {
@@ -430,5 +499,7 @@
 				}
 			}
 		}
+		}
+		
 	}
 }
